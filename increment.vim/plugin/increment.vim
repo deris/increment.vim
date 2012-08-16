@@ -1,15 +1,15 @@
 "=============================================================================
-" File: Test.vim
+" File: increment.vim
 " Author: yohe <ysekiguchi.zzz@gmail.com>
 " WebPage: 
 " License: MIT
 " Version: 0.1
 "=============================================================================
 
-if exists("g:loaded_test")
+if exists("g:loaded_increment")
   finish
 endif
-let g:loaded_test = 1
+let g:loaded_increment = 1
 
 let s:save_cpo = &cpo
 set cpo&vim
