@@ -20,7 +20,12 @@ function! increment#next_pattern()
             if l:pattern_index >= len(s:pattern_list)
                 let l:pattern_index = 0
             endif
+            let l:save_reg = @/
+            execute "normal! *"
+            execute "nohlsearch"
             execute "normal! ciw" . s:pattern_list[l:pattern_index]
+            call histdel("search", -1)
+            let @/ = l:save_reg
         else
             execute "normal! \<c-a>"
         endif
@@ -51,7 +56,12 @@ function! increment#prev_pattern()
             if l:pattern_index < 0
                 let l:pattern_index = len(s:pattern_list) - 1
             endif
+            let l:save_reg = @/
+            execute "normal! *"
+            execute "nohlsearch"
             execute "normal! ciw" . s:pattern_list[l:pattern_index]
+            call histdel("search", -1)
+            let @/ = l:save_reg
         else
             execute "normal! \<c-x>"
         endif
