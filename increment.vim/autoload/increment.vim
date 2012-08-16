@@ -13,7 +13,7 @@ function! increment#next_pattern()
             if l:pattern_index >= len(s:pattern_list)
                 let l:pattern_index = 0
             endif
-            execute "normal! ciw" . s:pattern_list[l:pattern_index]
+            execute "normal! ciW" . s:pattern_list[l:pattern_index]
         elseif  vital_DataList.has(s:pattern_list, s:cursor_str2)
             let l:pattern_index = index(s:pattern_list, s:cursor_str2)
             let l:pattern_index += 1
@@ -44,7 +44,7 @@ function! increment#prev_pattern()
             if l:pattern_index < 0
                 let l:pattern_index = len(s:pattern_list) - 1
             endif
-            execute "normal! ciw" . s:pattern_list[l:pattern_index]
+            execute "normal! ciW" . s:pattern_list[l:pattern_index]
         elseif  vital_DataList.has(s:pattern_list, s:cursor_str2)
             let l:pattern_index = index(s:pattern_list, s:cursor_str2)
             let l:pattern_index -= 1
