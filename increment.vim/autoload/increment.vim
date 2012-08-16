@@ -3,8 +3,8 @@ function! increment#next_pattern()
     let s:pattern_list = []
     try
         let s:pattern_list = g:increment_vim[&filetype]
-        let s:cursor_str1 = expand("<cword>")
-        let s:cursor_str2 = expand("<cWORD>")
+        let s:cursor_str1 = expand("<cWORD>")
+        let s:cursor_str2 = expand("<cword>")
         let vital = vital#of('increment.vim')
         let vital_DataList = vital.import('Data.List')
         if vital_DataList.has(s:pattern_list, s:cursor_str1)
@@ -34,8 +34,8 @@ function! increment#prev_pattern()
     let s:pattern_list = []
     try
         let s:pattern_list = g:increment_vim[&filetype]
-        let s:cursor_str1 = expand("<cword>")
-        let s:cursor_str2 = expand("<cWORD>")
+        let s:cursor_str1 = expand("<cWORD>")
+        let s:cursor_str2 = expand("<cword>")
         let vital = vital#of('increment.vim')
         let vital_DataList = vital.import('Data.List')
         if vital_DataList.has(s:pattern_list, s:cursor_str1)
